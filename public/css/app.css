@@ -21273,8 +21273,8 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   max-height: 550px;
 }
 
-.wrapper {
-  min-height: calc(60vh - 60px);
+.content {
+  min-height: calc(70vh - 70px);
 }
 
 .m-t-0 {
