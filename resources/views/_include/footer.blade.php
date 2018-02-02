@@ -1,19 +1,17 @@
 <footer class="footer">
-  <div class="container has-text-centered">
-    <div class="columns">
-      <div class="column">
-        <a href="https://bulma.io/made-with-bulma/" target="_blank">
-          <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
-        </a>
-        <br>
-        <small>
-          Get the <a href="https://bulma.io/made-with-bulma/">badge</a>!
-          <br>
-          Source code licensed <a href="https://opensource.org/licenses/mit-license.php">MIT</a>.
-          <br>
-          Website content licensed <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.
-        </small>
-      </div>
+  <div class="container">
+    <div class="content has-text-centered footer">
+      <p>
+        <strong>ADVENTRIP</strong> by <a href="https://jgthms.com">KEL 1</a>. Official Website <a href="http://www.smktarunabhakti.net/">SMKTARUNABHAKTI</a>.
+      </p>
+      <p>Follow Us</p>
+      <a href="#instagram"><img class="social" src="/storage/img/instagram.png" alt="instagram"></a>
+      <a href="#facebook"><img class="social" src="/storage/img/facebook.png" alt="facebook"></a>
+      <a href="#google-plus"><img class="social" src="/storage/img/google-plus.png" alt="google-plus"></a>
+      <a href="#pinterest"><img class="social" src="/storage/img/pinterest.png" alt="pinterest"></a>
+      <a href="#twitter"><img class="social" src="/storage/img/twitter.png" alt="twitter"></a>
+      <a href="#youtube"><img class="social" src="/storage/img/youtube.png" alt="youtube"></a>
+      <br><small>© 2018 SMK Taruna Bhakti. All Rights Reserved</small>
     </div>
   </div>
 </footer>
