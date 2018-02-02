@@ -15,7 +15,7 @@ class CreateStationOriginsTable extends Migration
     {
         Schema::create('station_origins', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nm_st_asal');
+            $table->string('nama_st_asal');
             $table->text('alamat_st_asal');
             $table->string('tlp_st_asal');
             $table->timestamps();

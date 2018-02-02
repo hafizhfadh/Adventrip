@@ -17,6 +17,7 @@ class CreateStationsTable extends Migration
             $table->increments('id');
             $table->integer('id_st_asal');
             $table->integer('id_st_tujuan');
+            $table->text('keterangan');
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ class CreateStationDestinationsTable extends Migration
     {
         Schema::create('station_destinations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nm_st_tujuan');
+            $table->string('nama_st_tujuan');
             $table->text('alamat_st_tujuan');
             $table->string('tlp_st_tujuan');
             $table->timestamps();
