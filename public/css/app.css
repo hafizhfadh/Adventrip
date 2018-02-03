@@ -21269,12 +21269,56 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   clip: auto;
 }
 
+html,
+body {
+  font-family: 'Open Sans', serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.box {
+  margin-top: 5rem;
+}
+
+.avatar {
+  margin-top: -70px;
+  padding-bottom: 20px;
+}
+
+.avatar img {
+  padding: 5px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+}
+
+input {
+  font-weight: 300;
+}
+
+p {
+  font-weight: 700;
+}
+
+p.subtitle {
+  padding-top: 1rem;
+}
+
 .carousel-container {
   max-height: 550px;
 }
 
-.wrapper {
-  min-height: calc(60vh - 60px);
+.content {
+  min-height: calc(100vh - 70px);
+}
+
+.social {
+  height: 70px;
+}
+
+.footer {
+  height: 200px;
 }
 
 .m-t-0 {
