@@ -21269,13 +21269,6 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   clip: auto;
 }
 
-html,
-body {
-  font-family: 'Open Sans', serif;
-  font-size: 14px;
-  font-weight: 300;
-}
-
 .box {
   margin-top: 5rem;
 }
@@ -21291,18 +21284,6 @@ body {
   border-radius: 50%;
   -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
-}
-
-input {
-  font-weight: 300;
-}
-
-p {
-  font-weight: 700;
-}
-
-p.subtitle {
-  padding-top: 1rem;
 }
 
 .carousel-container {
