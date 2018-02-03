@@ -15,6 +15,10 @@ class CreateScheduleTrainsTable extends Migration
     {
         Schema::create('schedule_trains', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_jadwal');
+            $table->datetime('jam_brgkt');
+            $table->datetime('jam_tiba');
+            $table->text('keterangan');
             $table->timestamps();
         });
     }
