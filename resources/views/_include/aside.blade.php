@@ -1,4 +1,4 @@
-<div class="column m-l-10 m-t-10 has-shadow">
+<div class="column m-l-10 m-t-10">
   <aside class="menu">
     <p class="menu-label">
       General
