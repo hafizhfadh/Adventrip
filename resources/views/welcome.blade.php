@@ -41,22 +41,50 @@
         <div class="columns">
           <div class="column">
             <div class="field">
-              <label class="label">Label</label>
+              <label class="label">Dari :</label>
               <div class="control">
-                <input class="input" type="text" placeholder="Text input">
+                <input class="input" type="text" placeholder="Stasiun Asal">
               </div>
               <p class="help">This is a help text</p>
             </div>
           </div>
           <div class="column">
             <div class="field">
-              <label class="label">Label</label>
+              <label class="label">Ke :</label>
               <div class="control">
-                <input class="input" type="text" placeholder="Text input">
+                <input class="input" type="text" placeholder="Stasiun Tujuan">
               </div>
               <p class="help">This is a help text</p>
             </div>
           </div>
+          <div class="column">
+            <div class="field">
+              <label class="label">Pergi :</label>
+              <div class="control">
+                <input class="input" type="date" placeholder="Tanggal Pergi">
+              </div>
+              <p class="help">This is a help text</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <label class="label">Pulang :</label>
+              <div class="control">
+                <input class="input" type="date" placeholder="Tanggal Pulang">
+              </div>
+              <p class="help">This is a help text</p>
+            </div>
+          </div>  
+          <div class="column">
+            <div class="field">
+              <label class="label">Penumpang :</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Jmlh Penumpang">
+              </div>
+              <p class="help">This is a help text</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
