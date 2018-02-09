@@ -13,7 +13,7 @@ class TrainScheduleController extends Controller
      */
     public function index()
     {
-        //
+        return view('train_schedule.index');
     }
 
     /**
