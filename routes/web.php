@@ -22,3 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/train', 'TrainController');
 
 Route::resource('/train_schedule', 'TrainScheduleController');
+
+Route::resource('/booking', 'BookingController');

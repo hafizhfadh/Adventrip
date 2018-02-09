@@ -35,29 +35,7 @@
   <section class="container m-t-20">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-header-title">Pemesanan Tiket</h3>
-      </div>
-      <div class="card-content">
-        <div class="columns">
-          <div class="column">
-            <div class="field">
-              <label class="label">Label</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Text input">
-              </div>
-              <p class="help">This is a help text</p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="field">
-              <label class="label">Label</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Text input">
-              </div>
-              <p class="help">This is a help text</p>
-            </div>
-          </div>
-        </div>
+        <h3 class="card-header-title">Kenapa Harus Pesan Tiket Kereta Api di Adventrip?</h3>
       </div>
     </div>
   </section>
