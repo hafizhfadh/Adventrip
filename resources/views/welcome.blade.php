@@ -62,7 +62,7 @@
             <div class="field">
               <label class="label">Pergi</label>
               <div class="control">
-                <input id="datePergi" class="input" type="text">
+                <input id="datePergi" class="input" type="text" placeholder="Tahun/Bulan/Tanggal">
               </div>
             </div>
           </div>
@@ -71,8 +71,12 @@
             <div class="field">
               <label class="label">Pulang</label>
               <div class="control">
+<<<<<<< HEAD
                 <input id="datepickerDemo2" class="input" type="text" value="2018/02/05">
 
+=======
+                <input id="datepickerDemo2" class="input" type="text" placeholder="Tahun/Bulan/Tanggal">
+>>>>>>> 6c3799a09b9f79ed31a911cd3913e704799a33e3
               </div>
             </div>
           </div>

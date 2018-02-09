@@ -13,7 +13,7 @@ class StasionController extends Controller
      */
     public function index()
     {
-        return view('stasion.index');
+        return view('station.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class StasionController extends Controller
      */
     public function create()
     {
-        //
+      return view('station.create');
     }
 
     /**
@@ -56,7 +56,7 @@ class StasionController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('station.edit');
     }
 
     /**

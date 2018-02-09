@@ -1,4 +1,4 @@
-<div class="column m-l-10 m-t-10">
+<div class="column m-l-10 m-t-10 is-2 has-shadow">
   <aside class="menu">
     <p class="menu-label">
       General
@@ -11,7 +11,7 @@
     <ul class="menu-list">
     <li><a>Trains</a></li>
       <li><a>Schedule Trains</a></li>
-      <li><a>Stations</a></li>
+      <li><a href="{{ route('station.index') }}">Stations</a></li>
     </ul>
     <p class="menu-label">
       Transactions
