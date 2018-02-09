@@ -963,7 +963,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(10);
-module.exports = __webpack_require__(50);
+module.exports = __webpack_require__(46);
 
 
 /***/ }),
@@ -987,13 +987,13 @@ window.Vue = __webpack_require__(34);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', __webpack_require__(37));
+// Vue.component('example-component', require('./components/ExampleComponent.vue'));
+//
+// const app = new Vue({
+//     el: '#app'
+// });
 
-var app = new Vue({
-  el: '#app'
-});
-
-__webpack_require__(41);
+__webpack_require__(37);
 
 /***/ }),
 /* 11 */
@@ -40513,246 +40513,18 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var disposed = false
-var normalizeComponent = __webpack_require__(38)
-/* script */
-var __vue_script__ = __webpack_require__(39)
-/* template */
-var __vue_template__ = __webpack_require__(40)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\ExampleComponent.vue"
 
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0ca92eac", Component.options)
-  } else {
-    hotAPI.reload("data-v-0ca92eac", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports) {
-
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file.
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier /* server only */
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = injectStyles
-  }
-
-  if (hook) {
-    var functional = options.functional
-    var existing = functional
-      ? options.render
-      : options.beforeCreate
-
-    if (!functional) {
-      // inject component registration as beforeCreate hook
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    } else {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return existing(h, context)
-      }
-    }
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-/* 39 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
-});
-
-/***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
-          _c("div", { staticClass: "panel panel-default" }, [
-            _c("div", { staticClass: "panel-heading" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "panel-body" }, [
-              _vm._v(
-                "\n                    I'm an example component!\n                "
-              )
-            ])
-          ])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0ca92eac", module.exports)
-  }
-}
-
-/***/ }),
-/* 41 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
+__webpack_require__(38);
+__webpack_require__(39);
+__webpack_require__(40);
+__webpack_require__(41);
 __webpack_require__(42);
 __webpack_require__(43);
 __webpack_require__(44);
 __webpack_require__(45);
-__webpack_require__(46);
-__webpack_require__(47);
-__webpack_require__(48);
-__webpack_require__(49);
 
 /***/ }),
-/* 42 */
+/* 38 */
 /***/ (function(module, exports) {
 
 const MOUSE_EVENTS = ['click', 'touchstart'];
@@ -40782,7 +40554,131 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 
 /***/ }),
-/* 43 */
+/* 39 */
+/***/ (function(module, exports) {
+
+const MOUSE_EVENTS = ['click', 'touchstart'];
+
+class Carousel {
+  constructor(element) {
+    this.element = element;
+
+    this.init();
+  }
+
+  init() {
+    this.items = Array.from(this.element.querySelectorAll('.carousel-item'));
+
+    MOUSE_EVENTS.forEach((event) => {
+      let previousControl = this.element.querySelector('.carousel-nav-left');
+      let nextControl = this.element.querySelector('.carousel-nav-right');
+      if (previousControl) {
+        previousControl.addEventListener(event, (e) => {
+          e.preventDefault();
+          this.move('previous');
+          if (this.autoplayInterval) {
+            clearInterval(this.autoplayInterval);
+            this.autoPlay(this.element.dataset.delay || 5000);
+          }
+        }, false);
+      }
+      if (nextControl) {
+        nextControl.addEventListener(event, (e) => {
+          e.preventDefault();
+          this.move('next');
+          if (this.autoplayInterval) {
+            clearInterval(this.autoplayInterval);
+            this.autoPlay(this.element.dataset.delay || 5000);
+          }
+        }, false);
+      }
+    });
+
+    this.initOrder();
+
+    if (this.element.dataset.autoplay && this.element.dataset.autoplay == 'true') {
+      this.autoPlay(this.element.dataset.delay || 5000);
+    }
+  }
+
+  initOrder() {
+    const currentActiveItem = this.element.querySelector('.carousel-item.is-active');
+    const currentActiveItemPos = this.items.indexOf(currentActiveItem);
+    const length = this.items.length;
+
+    if (currentActiveItemPos) {
+      this.items.push(this.items.splice(0, currentActiveItemPos));
+    } else {
+      this.items.unshift(this.items.pop());
+    }
+    this.setOrder();
+  }
+
+  setOrder() {
+    this.items.forEach((item, index) => {
+      if (index !== 1) {
+        item.style['z-index'] = '0';
+      } else {
+        item.style['z-index'] = '1';
+      }
+      item.style.order = index;
+    });
+  }
+
+  move(direction = 'next') {
+    if (this.items.length) {
+      const currentActiveItem = this.element.querySelector('.carousel-item.is-active');
+      let newActiveItem;
+
+      currentActiveItem.classList.remove('is-active');
+
+      // initialize direction to change order
+      if (direction === 'previous') {
+        // Reorder items
+        this.items.unshift(this.items.pop());
+        // add reverse class
+        this.element.classList.add('is-reversing');
+      } else {
+        // Reorder items
+        this.items.push(this.items.shift());
+        // remove reverse class
+        this.element.classList.remove('is-reversing');
+      }
+
+      if (this.items.length >= 1) {
+        newActiveItem = this.items[1];
+      } else {
+        newActiveItem = this.items[0];
+      }
+      newActiveItem.classList.add('is-active');
+      this.setOrder();
+
+      // Disable transition to instant change order
+      this.element.classList.toggle('carousel-animated');
+      // Enable transition to animate order 1 to order 2
+      setTimeout(() => {
+        this.element.classList.toggle('carousel-animated');
+      }, 50);
+    }
+  }
+
+  autoPlay(delay = 5000) {
+    this.autoplayInterval = setInterval(() => {
+      this.move('next');
+    }, delay);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var carousels = document.querySelectorAll('.carousel, .hero-carousel');
+  [].forEach.call(carousels, function(carousel) {
+    new Carousel(carousel);
+  });
+});
+
+
+/***/ }),
+/* 40 */
 /***/ (function(module, exports) {
 
 var datepicker_langs = {
@@ -41328,131 +41224,7 @@ class DatePicker {
 
 
 /***/ }),
-/* 44 */
-/***/ (function(module, exports) {
-
-const MOUSE_EVENTS = ['click', 'touchstart'];
-
-class Carousel {
-  constructor(element) {
-    this.element = element;
-
-    this.init();
-  }
-
-  init() {
-    this.items = Array.from(this.element.querySelectorAll('.carousel-item'));
-
-    MOUSE_EVENTS.forEach((event) => {
-      let previousControl = this.element.querySelector('.carousel-nav-left');
-      let nextControl = this.element.querySelector('.carousel-nav-right');
-      if (previousControl) {
-        previousControl.addEventListener(event, (e) => {
-          e.preventDefault();
-          this.move('previous');
-          if (this.autoplayInterval) {
-            clearInterval(this.autoplayInterval);
-            this.autoPlay(this.element.dataset.delay || 5000);
-          }
-        }, false);
-      }
-      if (nextControl) {
-        nextControl.addEventListener(event, (e) => {
-          e.preventDefault();
-          this.move('next');
-          if (this.autoplayInterval) {
-            clearInterval(this.autoplayInterval);
-            this.autoPlay(this.element.dataset.delay || 5000);
-          }
-        }, false);
-      }
-    });
-
-    this.initOrder();
-
-    if (this.element.dataset.autoplay && this.element.dataset.autoplay == 'true') {
-      this.autoPlay(this.element.dataset.delay || 5000);
-    }
-  }
-
-  initOrder() {
-    const currentActiveItem = this.element.querySelector('.carousel-item.is-active');
-    const currentActiveItemPos = this.items.indexOf(currentActiveItem);
-    const length = this.items.length;
-
-    if (currentActiveItemPos) {
-      this.items.push(this.items.splice(0, currentActiveItemPos));
-    } else {
-      this.items.unshift(this.items.pop());
-    }
-    this.setOrder();
-  }
-
-  setOrder() {
-    this.items.forEach((item, index) => {
-      if (index !== 1) {
-        item.style['z-index'] = '0';
-      } else {
-        item.style['z-index'] = '1';
-      }
-      item.style.order = index;
-    });
-  }
-
-  move(direction = 'next') {
-    if (this.items.length) {
-      const currentActiveItem = this.element.querySelector('.carousel-item.is-active');
-      let newActiveItem;
-
-      currentActiveItem.classList.remove('is-active');
-
-      // initialize direction to change order
-      if (direction === 'previous') {
-        // Reorder items
-        this.items.unshift(this.items.pop());
-        // add reverse class
-        this.element.classList.add('is-reversing');
-      } else {
-        // Reorder items
-        this.items.push(this.items.shift());
-        // remove reverse class
-        this.element.classList.remove('is-reversing');
-      }
-
-      if (this.items.length >= 1) {
-        newActiveItem = this.items[1];
-      } else {
-        newActiveItem = this.items[0];
-      }
-      newActiveItem.classList.add('is-active');
-      this.setOrder();
-
-      // Disable transition to instant change order
-      this.element.classList.toggle('carousel-animated');
-      // Enable transition to animate order 1 to order 2
-      setTimeout(() => {
-        this.element.classList.toggle('carousel-animated');
-      }, 50);
-    }
-  }
-
-  autoPlay(delay = 5000) {
-    this.autoplayInterval = setInterval(() => {
-      this.move('next');
-    }, delay);
-  }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  var carousels = document.querySelectorAll('.carousel, .hero-carousel');
-  [].forEach.call(carousels, function(carousel) {
-    new Carousel(carousel);
-  });
-});
-
-
-/***/ }),
-/* 45 */
+/* 41 */
 /***/ (function(module, exports) {
 
 const MOUSE_EVENTS = ['click', 'touchstart'];
@@ -41719,7 +41491,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 
 /***/ }),
-/* 46 */
+/* 42 */
 /***/ (function(module, exports) {
 
 const MOUSE_EVENTS = ['click', 'touchstart'];
@@ -41783,7 +41555,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /***/ }),
-/* 47 */
+/* 43 */
 /***/ (function(module, exports) {
 
 // Find output DOM associated to the DOM element passed as parameter
@@ -41860,7 +41632,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /***/ }),
-/* 48 */
+/* 44 */
 /***/ (function(module, exports) {
 
 const MOUSE_EVENTS = ['click', 'touchstart'];
@@ -42071,7 +41843,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /***/ }),
-/* 49 */
+/* 45 */
 /***/ (function(module, exports) {
 
 if (typeof Object.assign != 'function') {
@@ -42436,7 +42208,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 
 /***/ }),
-/* 50 */
+/* 46 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

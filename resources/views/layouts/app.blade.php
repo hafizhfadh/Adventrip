@@ -19,12 +19,19 @@
         <div id="app">
           @include('_include.navbar')
             <div class="content">
-              @yield('content')
+              <div class="columns">
+                @guest
+                @else
+                  @include('_include.aside')
+                @endguest
+                <div class="column">@yield('content')</div>
+              </div>
             </div>
           @include('_include.footer')
         </div>
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>
+        @stack('scripts')
     </body>
 </html>

@@ -12,5 +12,15 @@ class Train extends Model
    * @var string
    */
   protected $table = 'trains';
-  
+
+  public function wagons()
+  {
+    return $this->hasMany('App\Wagon');
+  }
+
+  public function chair()
+  {
+    return $this->hasMany('App\Chair');
+  }
+
 }

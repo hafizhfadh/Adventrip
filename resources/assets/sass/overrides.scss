@@ -1,9 +1,3 @@
-html,body {
-  font-family: 'Open Sans', serif;
-  font-size: 14px;
-  font-weight: 300;
-}
-
 .box {
   margin-top: 5rem;
 }
@@ -19,18 +13,6 @@ html,body {
   border-radius: 50%;
   -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
   box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
-}
-
-input {
-  font-weight: 300;
-}
-
-p {
-  font-weight: 700;
-}
-
-p.subtitle {
-  padding-top: 1rem;
 }
 
 .carousel-container {
