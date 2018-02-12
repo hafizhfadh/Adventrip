@@ -6,7 +6,7 @@
         <div class="columns">
           <div class="column">
             <p class="card-header-title">
-              Create Data
+              Create Data Station
             </p>
           </div>
         </div>
@@ -25,23 +25,25 @@
                 <div class="field">
                   <label class="label">Stasiun Keberangkatan</label>
                   <div class="control">
-                    <input class="input" type="email" placeholder="Stasiun Keberangkatan">
+                    <input class="input" type="text" placeholder="Stasiun Keberangkatan">
                   </div>
                 </div>
               </div>
               <div class="column">
                 <div class="field">
-                  <label class="label">Waktu Keberangkatan</label>
+                  <label class="label">Alamat Stasiun Keberangkatan</label>
                   <div class="control">
-                    <input class="input" type="email" placeholder="Waktu Keberangkatan">
+                    <input class="input" type="text" placeholder="Alamat Stasiun Keberangkatan">
                   </div>
                 </div>
-
-
-
-
-
-
+              </div>
+              <div class="column">
+                <div class="field">
+                  <label class="label">No Telp Stasiun Keberangkatan</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="No Telp Stasiun Keberangkatan">
+                  </div>
+                </div>
               </div>
             </div>
             <div class="columns">
@@ -49,28 +51,27 @@
                 <div class="field">
                   <label class="label">Stasiun Kedatangan</label>
                   <div class="control">
-                    <input class="input" type="email" placeholder="Stasiun Kedatangan">
+                    <input class="input" type="text" placeholder="Stasiun Kedatangan">
                   </div>
                 </div>
               </div>
               <div class="column">
                 <div class="field">
-                  <label class="label">Waktu Kedatangan</label>
+                  <label class="label">Alamat Stasiun Kedatangan</label>
                   <div class="control">
-                    <input class="input" type="email" placeholder="Waktu Kedatangan">
+                    <input class="input" type="text" placeholder="Alamat Stasiun Kedatangan">
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="field">
+                  <label class="label">No Telp Stasiun Kedatangan</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="No Telp Stasiun Kedatangan">
                   </div>
                 </div>
               </div>
             </div>
-            <div class="columns">
-              <div class="column">
-                <div class="field">
-                  <label class="label">Waktu Perjalanan</label>
-                  <div class="control">
-                    <input class="input" type="email" placeholder="Waktu Perjalanan">
-                  </div>
-                </div>
-              </div>
               <div class="column m-t-30">
                 <button class="button is-link fa fa-save"></button>
               </div>
