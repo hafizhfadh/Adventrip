@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-  <div class="column">
+  <div class="column is-10">
     <div class="card">
       <div class="card-header">
         <div class="columns">
@@ -11,41 +11,49 @@
           </div>
         </div>
       </div>
-
       <div class="card-content">
         <div class="columns">
           <a href="{{ route('station.create') }}"class="button is-light fa fa-plus"></a>
         </div>
-        <table class="table is-striped">
-          <thead>
-            <tr>
-              <th><abbr title="Position">No</abbr></th>
-              <th>Nama Kereta</th>
-              <th>Stasiun Keberangkatan</th>
-              <th>Alamat Stasiun Keberangkatan</th>
-              <th>No Telp Stasiun Keberangkatan</th>
-              <th>Stasiun Kedatangan</th>
-              <th>Alamat Stasiun Kedatangan</th>
-              <th>No Telp Stasiun Kedatangan</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>1</th>
-              <td>Argo Bromo Anggrek Pagi</td>
-              <td>Surabaya Pasar Turi (SBI)</td>
-              <td>Jl. Semarang 1, Tembok Dukuh, Bubutan, Surabaya</td>
-              <td>031-5345014</td>
-              <td>Gambir (GMR)</td>
-              <td>Jalan Medan Merdeka Timur No.27, Kel. Gambir, Kec. Gambir, Jakarta Pusat 10110, DKI Jakarta, Indonesia</td>
-              <td>(belom nyari)</td>
-              <td><a href="{{ url('station/{2}/edit') }}" class="button is-warning fa fa-edit"></a></td>
-              <td><a href="{{ route('station.create') }}" class="button is-danger fa fa-trash"></a></td>
-            </tr>
-
-          </tbody>
-        </table>
+        <div class="table__wrapper">
+          <table class="table is-bordered pricing__table is-fullwidth">
+            <thead>
+              <tr>
+                <th><abbr title="Position">No</abbr></th>
+                <th>Nama Stasiun</th>
+                <th>Alamat Stasiun</th>
+                <th>No Telp Stasiun</th>
+                <th>Keterangan</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($data as $a)
+              <tr>
+                <th>{{ $a->id }}</th>
+                <td>{{ $a->nama_st }}</td>
+                <td>{{ $a->alamat_st }}</td>
+                <td>{{ $a->tlp_st }}</td>
+                <td>{{ $a->keterangan }}</td>
+                <td>
+                  <div class="columns">
+                    <div class="column">
+                      <a href="station/{{$a->id}}/edit" class="button is-warning fa fa-edit"></a>
+                    </div>
+                    <div class="column">
+                      <form action="station/{{$a->id}}" method="delete">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="" value="_method">
+                        <button type="submit" name="button" class="button is-danger"><i class="fa fa-trash"></i></button>
+                      </form>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>

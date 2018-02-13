@@ -21302,6 +21302,15 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   height: 200px;
 }
 
+.table__wrapper {
+  overflow-x: auto;
+}
+
+.pricing__table {
+  width: 100%;
+  overflow-x: auto;
+}
+
 .m-t-0 {
   margin-top: 0px !important;
 }

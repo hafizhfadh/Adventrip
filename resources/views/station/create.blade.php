@@ -11,37 +11,36 @@
           </div>
         </div>
       </div>
-
       <div class="card-content">
-        <form class="form-vertical" action="{{ route('station.store') }}">
+        <div class="columns">
+          <div class="column">
+            <a href="{{ route('station.index') }}"class="button is-light fa fa-home"></a>
+        </div>
+        </div>
+        <form class="form-vertical" action="{{ route('station.store') }}" method="post">
+          {{ csrf_field() }}
           <div class="field">
-            <label class="label">Nama Kereta</label>
+            <label class="label">Nama Stasiun</label>
               <div class="control">
-                <input class="input" type="text" placeholder="Nama Kereta">
+                <input class="input" type="text" placeholder="Nama Stasiun" name="nama_st">
               </div>
             </div>
             <div class="columns">
               <div class="column">
                 <div class="field">
-                  <label class="label">Stasiun Keberangkatan</label>
+                  <label class="label">Alamat Stasiun<label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Stasiun Keberangkatan">
+                    <input class="input" type="text" placeholder="Alamat Stasiun" name="alamat_st">
                   </div>
                 </div>
               </div>
-              <div class="column">
-                <div class="field">
-                  <label class="label">Alamat Stasiun Keberangkatan</label>
-                  <div class="control">
-                    <input class="input" type="text" placeholder="Alamat Stasiun Keberangkatan">
-                  </div>
-                </div>
               </div>
-              <div class="column">
+              <div class="columns">
+                <div class="column">
                 <div class="field">
-                  <label class="label">No Telp Stasiun Keberangkatan</label>
+                  <label class="label">No Telp Stasiun</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="No Telp Stasiun Keberangkatan">
+                    <input class="input" type="text" placeholder="No Telp Stasiun" name="tlp_st">
                   </div>
                 </div>
               </div>
@@ -49,31 +48,17 @@
             <div class="columns">
               <div class="column">
                 <div class="field">
-                  <label class="label">Stasiun Kedatangan</label>
+                  <label class="label">Keterangan</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Stasiun Kedatangan">
-                  </div>
-                </div>
-              </div>
-              <div class="column">
-                <div class="field">
-                  <label class="label">Alamat Stasiun Kedatangan</label>
-                  <div class="control">
-                    <input class="input" type="text" placeholder="Alamat Stasiun Kedatangan">
-                  </div>
-                </div>
-              </div>
-              <div class="column">
-                <div class="field">
-                  <label class="label">No Telp Stasiun Kedatangan</label>
-                  <div class="control">
-                    <input class="input" type="text" placeholder="No Telp Stasiun Kedatangan">
+                    <textarea class="textarea" placeholder="Keterangan" name="keterangan"></textarea>
                   </div>
                 </div>
               </div>
             </div>
-              <div class="column m-t-30">
-                <button class="button is-link fa fa-save"></button>
+              <div class="column">
+                <div class="m-t-30">
+                  <button class="button is-link fa fa-save" type="submit"></button>
+                </div
               </div>
             </div>
         </form>
