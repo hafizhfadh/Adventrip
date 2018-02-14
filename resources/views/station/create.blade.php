@@ -12,11 +12,6 @@
         </div>
       </div>
       <div class="card-content">
-        <div class="columns">
-          <div class="column">
-            <a href="{{ route('station.index') }}"class="button is-light fa fa-home"></a>
-        </div>
-        </div>
         <form class="form-vertical" action="{{ route('station.store') }}" method="post">
           {{ csrf_field() }}
           <div class="field">
@@ -55,10 +50,13 @@
                 </div>
               </div>
             </div>
-              <div class="column">
-                <div class="m-t-30">
-                  <button class="button is-link fa fa-save" type="submit"></button>
-                </div
+              <div class="columns m-t-30 is-gapless">
+                <div class="column">
+                  <a href="{{ route('station.index') }}"class="button is-link fa fa-home"></a>
+                </div>
+                <div class="column">
+                  <button class="button is-success fa fa-check" type="submit"></button>
+                </div>
               </div>
             </div>
         </form>
