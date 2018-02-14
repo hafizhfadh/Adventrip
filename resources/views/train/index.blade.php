@@ -36,19 +36,23 @@
             </tr>
           </tfoot>
           <tbody>
-            <tr>
-              <th>1</th>
-              <td><a href="https://en.wikipedia.org/wiki/A.F.C._Bournemouth" title="A.F.C. Bournemouth">AFC Bournemouth</a></td>
-              <td>38</td>
-              <td>11</td>
-              <td>9</td>
-              <td>18</td>
-              <td>45</td>
-              <td>67</td>
-              <td>−22</td>
-              <td>42</td>
-              <td></td>
-            </tr>
+            <?php $n = 0; ?>
+            @foreach ($data as $a)
+              <tr>
+                <th>{{ $n }}</th>
+                <td><a href="https://en.wikipedia.org/wiki/A.F.C._Bournemouth" title="A.F.C. Bournemouth">AFC Bournemouth</a></td>
+                <td>38</td>
+                <td>11</td>
+                <td>9</td>
+                <td>18</td>
+                <td>45</td>
+                <td>67</td>
+                <td>−22</td>
+                <td>42</td>
+                <td></td>
+              </tr>
+              <?php $n++ ?>
+            @endforeach
           </tbody>
         </table>
       </div>

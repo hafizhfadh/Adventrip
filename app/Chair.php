@@ -12,4 +12,10 @@ class Chair extends Model
    * @var string
    */
   protected $table = 'chairs';
+
+  public function train()
+  {
+    return $this->belongsTo('App\Train');
+  }
+
 }

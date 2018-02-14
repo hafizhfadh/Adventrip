@@ -15,7 +15,8 @@ class CreateChairsTable extends Migration
     {
         Schema::create('chairs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('chair_number');
+            $table->integer('wagon_id');
+            $table->string('chair_number');
             $table->enum('chair_status', ['Available', 'Unavailable']);
             $table->timestamps();
         });

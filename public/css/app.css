@@ -74,6 +74,8 @@ table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sortin
 
 /* modified path import of other modules */
 
+/*! bulma.io v0.6.2 | MIT License | github.com/jgthms/bulma */
+
 @-webkit-keyframes spinAround {
   from {
     -webkit-transform: rotate(0deg);
@@ -21339,23 +21341,6 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   clip: auto;
 }
 
-.box {
-  margin-top: 5rem;
-}
-
-.avatar {
-  margin-top: -70px;
-  padding-bottom: 20px;
-}
-
-.avatar img {
-  padding: 5px;
-  background: #fff;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
-  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
-}
-
 .carousel-container {
   max-height: 550px;
 }
@@ -21364,21 +21349,8 @@ input[type=range].slider.is-danger .has-output-tooltip + output {
   min-height: calc(100vh - 70px);
 }
 
-.social {
-  height: 70px;
-}
-
 .footer {
   height: 200px;
-}
-
-.table__wrapper {
-  overflow-x: auto;
-}
-
-.pricing__table {
-  width: 100%;
-  overflow-x: auto;
 }
 
 .m-t-0 {
