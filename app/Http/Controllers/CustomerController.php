@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Station;
 use Illuminate\Http\Request;
 
-class StasionController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class StasionController extends Controller
      */
     public function index()
     {
-      $data = Station::all();
-        return view('station.index')->with('data', $data);
+        return view('customer.index');
     }
 
     /**
@@ -25,7 +23,7 @@ class StasionController extends Controller
      */
     public function create()
     {
-      return view('station.create');
+        return view('customer.create');
     }
 
     /**
@@ -36,14 +34,7 @@ class StasionController extends Controller
      */
     public function store(Request $request)
     {
-        $station = new Station;
-        $station->nama_st = $request->input('nama_st');
-        $station->alamat_st = $request->input('alamat_st');
-        $station->tlp_st= $request->input('tlp_st');
-        $station->keterangan = $request->input('keterangan');
-        $station->save();
-
-        return redirect(route('station.index'));
+        //
     }
 
     /**
@@ -65,8 +56,7 @@ class StasionController extends Controller
      */
     public function edit($id)
     {
-      $data = Station::findOrFail($id);
-        return view('station.edit')->with('data', $data);
+        return view('customer.edit');
     }
 
     /**
@@ -87,7 +77,7 @@ class StasionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function stationroy($id)
+    public function destroy($id)
     {
         //
     }

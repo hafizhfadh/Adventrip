@@ -6,59 +6,61 @@
         <div class="columns">
           <div class="column">
             <p class="card-header-title">
-              Create Data Station
+              Edit Data
             </p>
           </div>
         </div>
       </div>
+
       <div class="card-content">
-        <div class="columns">
-          <div class="column">
-            <a href="{{ route('station.index') }}"class="button is-light fa fa-home"></a>
-        </div>
-        </div>
-        <form class="form-vertical" action="{{ route('station.store') }}" method="post">
-          {{ csrf_field() }}
+        <form class="form-vertical" action="{{ route('customer.store') }}">
           <div class="field">
-            <label class="label">Nama Stasiun</label>
+            <label class="label">Nomor Identitas</label>
               <div class="control">
-                <input class="input" type="text" placeholder="Nama Stasiun" name="nama_st">
+                <input class="input" type="text" placeholder="Nomor Identitas">
               </div>
             </div>
+
             <div class="columns">
               <div class="column">
                 <div class="field">
-                  <label class="label">Alamat Stasiun<label>
+                  <label class="label">Titel</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Alamat Stasiun" name="alamat_st">
-                  </div>
+                    <div class="select">
+                    <select>
+                        <option value="tuan">Tuan</option>
+                        <option value="nyonya">Nyonya</option>
+                        <option value="nona">Nona</option>
+                    </select>
+                    </div>
+                 </div>
                 </div>
               </div>
               </div>
+          
               <div class="columns">
-                <div class="column">
+              <div class="column">
                 <div class="field">
-                  <label class="label">No Telp Stasiun</label>
+                  <label class="label">Nama Customer</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="No Telp Stasiun" name="tlp_st">
+                    <input class="input" type="text" placeholder="Nama Customer">
                   </div>
                 </div>
               </div>
-            </div>
+              </div>
+
             <div class="columns">
               <div class="column">
                 <div class="field">
-                  <label class="label">Keterangan</label>
+                  <label class="label">No Telephone</label>
                   <div class="control">
-                    <textarea class="textarea" placeholder="Keterangan" name="keterangan"></textarea>
+                    <input class="input" type="text" placeholder="No Telephone">
                   </div>
                 </div>
               </div>
-            </div>
-              <div class="column">
-                <div class="m-t-30">
-                  <button class="button is-link fa fa-save" type="submit"></button>
-                </div
+
+              <div class="column m-t-30">
+                <button class="button is-success">Done</button>
               </div>
             </div>
         </form>

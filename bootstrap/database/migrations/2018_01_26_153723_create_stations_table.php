@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWagonsTable extends Migration
+class CreateStationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateWagonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('wagons', function (Blueprint $table) {
+        Schema::create('stations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('chair_id');
-            $table->enum('wagon_type', ['Executive', 'Bisnis', 'Economy']);
-            $table->string('price');
+            $table->string('nama_st');
+            $table->text('alamat_st');
+            $table->string('tlp_st');
+            $table->text('keterangan');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateWagonsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wagons');
+        Schema::dropIfExists('stations');
     }
 }
