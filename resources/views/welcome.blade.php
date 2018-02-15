@@ -71,10 +71,16 @@
             <div class="field">
               <label class="label">Pulang</label>
               <div class="control">
+<<<<<<< HEAD
+
+                <input id="datepickerDemo2" class="input" type="date" placeholder="Tahun/Bulan/Tanggal">
+=======
                 <input id="datepickerDemo2" class="input" type="date">
+>>>>>>> d1d6d808de9186bf3b7737a5b31e82ea9e4ef19c
               </div>
             </div>
           </div>
+
 
           <div class="column">
             <div class="field">

@@ -22,3 +22,4 @@ window.Vue = require('vue');
 // });
 
 require('./bulma-extensions');
+require( 'datatables-bulma' )( window, $ );

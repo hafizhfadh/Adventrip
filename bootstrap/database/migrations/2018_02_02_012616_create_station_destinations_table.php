@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChairsTable extends Migration
+class CreateStationDestinationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateChairsTable extends Migration
      */
     public function up()
     {
-        Schema::create('chairs', function (Blueprint $table) {
+        Schema::create('station_destinations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('chair_number');
-            $table->enum('chair_status', ['Available', 'Unavailable']);
+            $table->string('nama_st_tujuan');
+            $table->text('alamat_st_tujuan');
+            $table->string('tlp_st_tujuan');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateChairsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chairs');
+        Schema::dropIfExists('station_destinations');
     }
 }
