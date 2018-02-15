@@ -13,7 +13,7 @@ class TrainScheduleController extends Controller
      */
     public function index()
     {
-        //
+        return view('train_schedule.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class TrainScheduleController extends Controller
      */
     public function create()
     {
-        //
+        return view('train_schedule.create');
     }
 
     /**
@@ -34,7 +34,7 @@ class TrainScheduleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect('train_schedule.index');
     }
 
     /**

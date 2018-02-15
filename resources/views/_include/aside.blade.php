@@ -9,8 +9,8 @@
     </ul>
     <p class="menu-label">Trains</p>
     <ul class="menu-list">
-    <li><a>Trains</a></li>
-      <li><a>Schedule Trains</a></li>
+      <li><a href="{{ route('train.index') }}">Trains</a></li>
+      <li><a href="{{ route('train_schedule.index') }}">Schedule Trains</a></li>
       <li><a href="{{ route('station.index') }}">Stations</a></li>
     </ul>
     <p class="menu-label">
