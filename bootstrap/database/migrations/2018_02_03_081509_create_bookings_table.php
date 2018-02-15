@@ -15,6 +15,16 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_booking');
+            $table->integer('id_customer');
+            $table->integer('id_kereta');
+            $table->integer('id_jadwal');
+            $table->integer('id_stasiun');
+            $table->integer('id_tarif');
+            $table->datetime('tgl_pesan');
+            $table->integer('jml_tiket');
+            $table->string('total_bayar');
+            $table->string('token');
             $table->timestamps();
         });
     }
