@@ -35,6 +35,9 @@
   <section class="container m-t-20">
     <div class="card">
       <div class="card-header">
+
+        <h3 class="card-header-title">Kenapa Harus Pesan Tiket Kereta Api di Adventrip?</h3>
+
         <h3 class="card-header-title">Booking Ticket</h3>
       </div>
       <div class="card-content">
@@ -72,11 +75,15 @@
               <label class="label">Pulang</label>
               <div class="control">
 <<<<<<< HEAD
+                <input id="datepickerDemo2" class="input" type="date" placeholder="Tahun/Bulan/Tanggal">
+=======
+<<<<<<< HEAD
 
                 <input id="datepickerDemo2" class="input" type="date" placeholder="Tahun/Bulan/Tanggal">
 =======
                 <input id="datepickerDemo2" class="input" type="date">
 >>>>>>> d1d6d808de9186bf3b7737a5b31e82ea9e4ef19c
+>>>>>>> b970954fe2abd356572ea4f1186dcceca444050f
               </div>
             </div>
           </div>
@@ -106,6 +113,7 @@
           </div>
 
         </div>
+
       </div>
     </div>
   </section>
