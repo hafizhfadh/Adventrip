@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use app\Train_schedule;
 use Illuminate\Http\Request;
 
 class TrainScheduleController extends Controller
@@ -13,7 +14,8 @@ class TrainScheduleController extends Controller
      */
     public function index()
     {
-        return view('train_schedule.index');
+        $data = train_schedule::all();
+        return view('train_schedule.index')->with('data', $data);
     }
 
     /**
@@ -34,6 +36,15 @@ class TrainScheduleController extends Controller
      */
     public function store(Request $request)
     {
+        $train_schedule = new train_schedule;
+        $train_schedule->Nama_kereta = $request->input('Nama_Kereta');
+        $train_schedule->Stasiun_Keberangkatan = $request->input('Stasiun_Keberangkatan');
+        $train_schedule->Waktu_Keberangkatan = $Request->input('Waktu_keberangkatan');
+        $train_schedule->Stasiun_Kedatangan = $request->input('Stasiun_kedatangan');
+        $train_schedule->Waktu_Kedatangan = $requst->input('Waktu_Kedatangan');
+        $train_schedule->Waktu_Yang_Ditempuh = $requst->input('Waktu_Yang_Ditempuh');
+        $train_schedule->save();
+
         return redirect('train_schedule.index');
     }
 
@@ -56,7 +67,8 @@ class TrainScheduleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = train_schedule::findOrFail($id);
+        return view('train_schedule.edit')->with('data', $data);
     }
 
     /**
