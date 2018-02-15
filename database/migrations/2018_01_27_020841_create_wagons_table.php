@@ -15,7 +15,7 @@ class CreateWagonsTable extends Migration
     {
         Schema::create('wagons', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('chair_id');
+            $table->integer('train_id');
             $table->enum('wagon_type', ['Executive', 'Bisnis', 'Economy']);
             $table->string('price');
             $table->timestamps();
