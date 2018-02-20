@@ -13,11 +13,13 @@
       </div>
 
       <div class="card-content">
-        <form class="form-vertical" action="{{ route('booking.store') }}">
+        <form class="form-vertical" action="{{ url('booking/'.$data->id)}}" method="post">
+        {{ csrf_field() }}
+        <input type="hidden" name="_method" value="PUT">
           <div class="field">
             <label class="label">Nama Customer</label>
               <div class="control">
-                <input class="input" type="text" placeholder="Nama Customer">
+                <input class="input" type="text" value="{{ $data->nama_customer }}" name="nama_customer">
               </div>
             </div>
 
@@ -26,7 +28,7 @@
                 <div class="field">
                   <label class="label">Tanggal Pesan</label>
                   <div class="control">
-                    <input class="input" type="date" placeholder="Tanggal Pesan">
+                    <input class="input" type="date" value="{{ $data->tanggal_pesan }}" name="tanggal_pesan">
                   </div>
                 </div>
             </div>
@@ -38,7 +40,7 @@
                 <div class="field">
                   <label class="label">Nama Kereta</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Nama Kereta">
+                    <input class="input" type="text" value="{{ $data->nama_kereta }}" name="nama_kereta">
                   </div>
                 </div>
               </div>
@@ -49,7 +51,7 @@
                 <div class="field">
                   <label class="label">Stasiun Keberangkatan</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Stasiun Keberangkatan">
+                    <input class="input" type="text" value="{{ $data->stasiun_keberangkatan }}" name="stasiun_keberangkatan">
                   </div>
                 </div>
               </div>
@@ -58,7 +60,7 @@
                 <div class="field">
                   <label class="label">Stasiun Kedatangan</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Stasiun Kedatangan">
+                    <input class="input" type="text" value="{{ $data->stasiun_kedatangan }}" name="stasiun_kedatangan">
                   </div>
                 </div>
                 </div>
@@ -69,7 +71,7 @@
                 <div class="field">
                   <label class="label">Waktu Keberangkatan</label>
                   <div class="control">
-                    <input class="input" type="time" placeholder="Waktu Keberangkatan">
+                    <input class="input" type="time" value="{{ $data->waktu_keberangkatan }}" name="waktu_keberangkatan">
                   </div>
                 </div>
                 </div>
@@ -78,7 +80,7 @@
                 <div class="field">
                   <label class="label">Waktu Kedatangan</label>
                   <div class="control">
-                    <input class="input" type="time" placeholder="Waktu Kedatangan">
+                    <input class="input" type="time" value="{{ $data->waktu_kedatangan }}" name="waktu_kedatangan">
                   </div>
                 </div>
                 </div>
@@ -89,27 +91,26 @@
                 <div class="field">
                   <label class="label">Jumlah Tiket</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Jumlah Tiket">
+                    <input class="input" type="text" value="{{ $data->jumlah_tiket }}" name="jumlah_tiket">
                   </div>
                 </div>
             </div>
-
+        
               <div class="column">
                 <div class="field">
                   <label class="label">Tarif Per Tiket</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Tarif Per Tiket">
+                    <input class="input" type="text" value="{{ $data->tarif_pertiket }}" name="tarif_pertiket">
                   </div>
                 </div>
-              </div>
-              </div>
+              </div>  
 
             <div class="columns">
               <div class="column">
                 <div class="field">
                   <label class="label">Total Bayar</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Total Bayar">
+                    <input class="input" type="string" value="{{ $data->total_bayar }}" name="total_bayar">
                   </div>
                 </div>
               </div>
