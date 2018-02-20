@@ -28,9 +28,10 @@
               </tr>
             </thead>
             <tbody>
+              <?php $n=1 ?>
               @foreach($data as $a)
               <tr>
-                <th>{{ $a->id }}</th>
+                <th>{{ $n }}</th>
                 <td>{{ $a->nama_st }}</td>
                 <td>{{ $a->alamat_st }}</td>
                 <td>{{ $a->tlp_st }}</td>
@@ -41,15 +42,16 @@
                       <a href="station/{{$a->id}}/edit" class="button is-warning fa fa-edit"></a>
                     </div>
                     <div class="column">
-                      <form action="station/{{$a->id}}" method="delete">
+                      <form action="station/{{$a->id}}" method="post">
                         {{ csrf_field() }}
-                        <input type="hidden" name="" value="_method">
+                        <input type="hidden" name="_method" value="delete">
                         <button type="submit" name="button" class="button is-danger"><i class="fa fa-trash"></i></button>
                       </form>
                     </div>
                   </div>
                 </td>
               </tr>
+              <?php $n++ ?>
               @endforeach
             </tbody>
           </table>
