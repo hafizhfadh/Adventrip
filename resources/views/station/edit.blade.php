@@ -13,19 +13,41 @@
       </div>
 
       <div class="card-content">
-        <form class="form-vertical" action="station/{{$data->id}}" method="post">
+        <form class="form-vertical" action="{{ url('station/'.$data->id) }}" method="post">
+          {{ csrf_field() }}
+          <input type="hidden" name="_method" value="PUT">
           <div class="field">
             <label class="label">Nama Stasiun</label>
               <div class="control">
-                <input class="input" type="text" placeholder="{{ $data->nama_st }}" name="nama_st">
+                <input class="input" type="text" value="{{ $data->nama_st }}" name="nama_st">
               </div>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <div class="field">
+                <label class="label">Kode Stasiun</label>
+                <div class="control">
+                  <input class="input" type="text" value="{{ $data->kode_st }}" name="kode_st">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <div class="field">
+                <label class="label">Kota</label>
+                <div class="control">
+                  <input class="input" type="text" value="{{ $data->kota }}" name="kota">
+                </div>
+              </div>
+            </div>
           </div>
           <div class="columns">
             <div class="column">
               <div class="field">
                 <label class="label">Alamat Stasiun</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="{{ $data->alamat_st }}" name="alamat_st">
+                  <input class="input" type="text" value="{{ $data->alamat_st }}" name="alamat_st">
                 </div>
               </div>
             </div>
@@ -35,27 +57,17 @@
               <div class="field">
                 <label class="label">No Telp Stasiun</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="{{ $data->tlp_st }}" name="tlp_st">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="columns">
-            <div class="column">
-              <div class="field">
-                <label class="label">Keterangan</label>
-                <div class="control">
-                  <textarea class="textarea" name="keterangan" placeholder="{{ $data->keterangan }}"></textarea>
+                  <input class="input" type="text" value="{{ $data->tlp_st }}" name="tlp_st">
                 </div>
               </div>
             </div>
           </div>
           <div class="columns m-t-30 is-gapless">
             <div class="column">
-              <a href="{{ route('station.index') }}"class="button is-light fa fa-home"></a>
+              <a href="{{ route('station.index') }}"class="button is-danger">Cancel</a>
             </div>
             <div class="column">
-              <button class="button is-success fa fa-check" type="submit"></button>
+              <button class="button is-success" type="submit">Save</button>
             </div>
           </div>
         </form>

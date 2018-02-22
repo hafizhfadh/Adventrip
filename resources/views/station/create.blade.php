@@ -11,18 +11,34 @@
           </div>
         </div>
       </div>
+      <!-- <div class="notification is-info"> Pastikan Semua Data Terisi! </div> -->
       <div class="card-content">
-        <div class="columns">
-          <div class="column">
-            <a href="{{ route('station.index') }}"class="button is-light fa fa-home"></a>
-        </div>
-        </div>
         <form class="form-vertical" action="{{ route('station.store') }}" method="post">
           {{ csrf_field() }}
           <div class="field">
             <label class="label">Nama Stasiun</label>
               <div class="control">
                 <input class="input" type="text" placeholder="Nama Stasiun" name="nama_st">
+              </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                <div class="field">
+                  <label class="label">Kode Stasiun</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Kode Stasiun" name="kode_st">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                <div class="field">
+                  <label class="label">Kota</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Kota" name="kota">
+                  </div>
+                </div>
               </div>
             </div>
             <div class="columns">
@@ -45,20 +61,13 @@
                 </div>
               </div>
             </div>
-            <div class="columns">
-              <div class="column">
-                <div class="field">
-                  <label class="label">Keterangan</label>
-                  <div class="control">
-                    <textarea class="textarea" placeholder="Keterangan" name="keterangan"></textarea>
-                  </div>
+              <div class="columns m-t-30 is-gapless">
+                <div class="column">
+                  <a href="{{ route('station.index') }}"class="button is-danger">Cancel</a>
                 </div>
-              </div>
-            </div>
-              <div class="column">
-                <div class="m-t-30">
-                  <button class="button is-link fa fa-save" type="submit"></button>
-                </div
+                <div class="column">
+                  <button class="button is-success" type="submit">Save</button>
+                </div>
               </div>
             </div>
         </form>

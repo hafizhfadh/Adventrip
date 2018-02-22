@@ -38,9 +38,10 @@ class StasionController extends Controller
     {
         $station = new Station;
         $station->nama_st = $request->input('nama_st');
+        $station->kode_st = $request->input('kode_st');
+        $station->kota = $request->input('kota');
         $station->alamat_st = $request->input('alamat_st');
         $station->tlp_st= $request->input('tlp_st');
-        $station->keterangan = $request->input('keterangan');
         $station->save();
 
         return redirect(route('station.index'));
@@ -78,8 +79,18 @@ class StasionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $station = Station::find($id);
+        $station->nama_st = $request->input('nama_st');
+        $station->kode_st = $request->input('kode_st');
+        $station->alamat_st = $request->input('alamat_st');
+        $station->kota = $request->input('kota');
+        $station->tlp_st = $request->input('tlp_st');
+        $station->save();
+
+        return redirect('/station')->with('success', 'Station Updated');
     }
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -87,8 +98,10 @@ class StasionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function stationroy($id)
+    public function destroy($id)
     {
-        //
+        $id = Station::find($id);
+        $id->delete();
+        return redirect('/station');
     }
 }
