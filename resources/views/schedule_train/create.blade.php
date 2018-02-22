@@ -13,11 +13,17 @@
       </div>
 
       <div class="card-content">
-        <form class="form-vertical" action="{{ route('train_schedule.store') }}">
+      <div class="columns">
+        <div calss="column">
+          <a herf="{{ route('train_schedule.index') }}"class="button is-light fa fa-home"></a>
+          </div>
+          </div>
+        <form class="form-vertical" action="{{ route('train_schedule.store') }}" method="post">
+      {{ csrf_field()}}
           <div class="field">
             <label class="label">Nama Kereta</label>
               <div class="control">
-                <input class="input" type="text" placeholder="Nama Kereta">
+                <input class="input" type="text" placeholder="Nama Kereta" name="nama_kereta">
               </div>
             </div>
             <div class="columns">
@@ -25,7 +31,7 @@
                 <div class="field">
                   <label class="label">Stasiun Keberangkatan</label>
                   <div class="control">
-                    <input class="input" type="email" placeholder="Stasiun Keberangkatan">
+                    <input class="input" type="text" placeholder="Stasiun Keberangkatan" name="stasiun_keberangkatan">
                   </div>
                 </div>
               </div>
@@ -33,7 +39,7 @@
                 <div class="field">
                   <label class="label">Waktu Keberangkatan</label>
                   <div class="control">
-                    <input class="input" type="email" placeholder="Waktu Keberangkatan">
+                    <input class="input" type="date" name="waktu_keberangkatan">
                   </div>
                 </div>
               </div>
@@ -43,7 +49,7 @@
                 <div class="field">
                   <label class="label">Stasiun Kedatangan</label>
                   <div class="control">
-                    <input class="input" type="email" placeholder="Stasiun Kedatangan">
+                    <input class="input" type="text" placeholder="Stasiun Kedatangan" name="stasiun_kedatangan">
                   </div>
                 </div>
               </div>
@@ -51,7 +57,7 @@
                 <div class="field">
                   <label class="label">Waktu Kedatangan</label>
                   <div class="control">
-                    <input class="input" type="email" placeholder="Waktu Kedatangan">
+                    <input class="input" type="date" name="waktu_kedatangan">
                   </div>
                 </div>
               </div>
@@ -61,12 +67,12 @@
                 <div class="field">
                   <label class="label">Waktu Perjalanan</label>
                   <div class="control">
-                    <input class="input" type="email" placeholder="Waktu Perjalanan">
+                    <input class="input" type="date" name="waktu_yang_ditempuh">
                   </div>
                 </div>
               </div>
               <div class="column m-t-30">
-                <button class="button is-link fa fa-save"></button>
+                <button type="submit" class="button is-link fa fa-save"></button>
               </div>
             </div>
         </form>

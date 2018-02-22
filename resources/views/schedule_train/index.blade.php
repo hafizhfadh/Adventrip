@@ -25,19 +25,37 @@
                     </tr>
                 </thead>
                 <tbody>
+                @php
+                $x = 1
+                @endphp
+                @foreach($data as $a)
                 <tr>
-                        <th>1</th>
-                          <td>Argo Bromo Anggrek Pagi</td>
-                         <td>Surabaya Pasutri (SBI)</td>
-                         <td>08.00</td>
-                         <td>Gambir (GMR)</td>
-                         <td>17.00</td>
-                         <td>Waktu Yang Ditempuh</td>
+                        <th>{{ $x }}</th>
+                        <td>{{ $a->nama_kereta }}</td>
+                        <td>{{ $a->stasiun_keberangkatan }}</td>
+                        <td>{{ $a->waktu_keberangkatan }}</td>
+                        <td>{{ $a->stasiun_kedatangan }}</td>
+                        <td>{{ $a->waktu_kedatangan }}</td>
+                        <td>{{ $a->waktu_yang_ditempuh }}</td>
                          <td>
-                <a herf="{{ url('train_schedule/{2}/edit') }}" class="button is-warning fa fa-edit"></a>
-                <a herf="{{ url('train_schedule.create') }}" class="button is-danger fa fa-trash"></a>
-                </td>
+                         <div class="columns">
+                         <div class="column">
+                         <a href="train_schedule/{{$a->id}}/edit" class="button is-warning fa fa-edit"></a>
+                         </div>
+                         <div class="column">
+                         <form action="train_schedule/{{$a->id}}" method="post">
+                         {{ csrf_field() }}
+                         <input type="hidden" name="_method" value="delete">
+                         <button type="submit" name="button" class="button is-danger fa fa-trash"></button>
+                         </form>
+                         </div>
+                         </div>
+                    </td>
                 </tr>
+                @php
+                $x++
+                @endphp
+                @endforeach
                     <tr>
                     </tr>
                 </tbody>

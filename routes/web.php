@@ -23,10 +23,9 @@ Route::resource('/train', 'TrainController');
 
 Route::resource('/station', 'StasionController');
 
-Route::resource('/train_schedule', 'TrainScheduleController');
+Route::resource('/train_schedule', 'ScheduleTrainController');
 
-<<<<<<< HEAD
 Route::resource('/booking', 'BookingController');
-=======
+
 Route::resource('/customer', 'CustomerController');
->>>>>>> b970954fe2abd356572ea4f1186dcceca444050f
+
