@@ -74,7 +74,9 @@
             <div class="field">
               <label class="label">Pulang</label>
               <div class="control">
+
                 <input id="datepickerDemo2" class="input" type="date" placeholder="Tahun/Bulan/Tanggal">
+
               </div>
             </div>
           </div>

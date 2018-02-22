@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Booking;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -13,7 +14,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-        return view('booking.index');
+         $data = Booking::all();
+        return view('booking.index')->with('data', $data);
     }
 
     /**
@@ -23,7 +25,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+        return view('booking.create');
     }
 
     /**
@@ -34,7 +36,20 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $booking = new Booking;
+        $booking->nama_customer = $request->input('nama_customer');
+        $booking->tanggal_pesan = $request->input('tanggal_pesan');
+        $booking->nama_kereta= $request->input('nama_kereta');
+        $booking->stasiun_keberangkatan = $request->input('stasiun_keberangkatan');
+        $booking->stasiun_kedatangan = $request->input('stasiun_kedatangan');
+        $booking->waktu_keberangkatan = $request->input('waktu_keberangkatan');
+        $booking->waktu_kedatangan = $request->input('waktu_kedatangan');
+        $booking->jumlah_tiket = $request->input('jumlah_tiket');
+        $booking->tarif_pertiket = $request->input('tarif_pertiket');
+        $booking->total_bayar = $request->input('total_bayar');
+        $booking->save();
+
+        return redirect(route('booking.index'));
     }
 
     /**
@@ -56,7 +71,8 @@ class BookingController extends Controller
      */
     public function edit($id)
     {
-        return view('booking.edit');
+        $data = Booking::findOrFail($id);
+        return view('booking.edit', compact('data'));
         
     }
 
@@ -69,7 +85,21 @@ class BookingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $booking = Booking::find($id);
+        $booking->nama_customer = $request->input('nama_customer');
+        $booking->tanggal_pesan = $request->input('tanggal_pesan');
+        $booking->nama_kereta = $request->input('nama_kereta');
+        $booking->stasiun_keberangkatan = $request->input('stasiun_keberangkatan');
+        $booking->stasiun_kedatangan = $request->input('stasiun_kedatangan');
+        $booking->waktu_keberangkatan = $request->input('waktu_keberangkatan');
+        $booking->waktu_kedatangan = $request->input('waktu_kedatangan');
+        $booking->jumlah_tiket = $request->input('jumlah_tiket');
+        $booking->tarif_pertiket = $request->input('tarif_pertiket');
+        $booking->total_bayar = $request->input('total_bayar');
+        $booking->save();
+
+        return redirect('/booking')->with('success', 'Booking Updated');
+        
     }
 
     /**
@@ -80,6 +110,8 @@ class BookingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $id = Booking::find($id);
+        $id->delete();
+        return redirect('/booking');
     }
 }
