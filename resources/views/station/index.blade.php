@@ -13,7 +13,7 @@
       </div>
       <div class="card-content">
         <div class="columns">
-          <a href="{{ route('station.create') }}"class="button is-light fa fa-plus"></a>
+          <a href="{{ route('station.create') }}"class="button is-danger">Create</a>
         </div>
         <div class="table__wrapper">
           <table class="table is-bordered pricing__table is-fullwidth">
@@ -21,9 +21,10 @@
               <tr>
                 <th><abbr title="Position">No</abbr></th>
                 <th>Nama Stasiun</th>
+                <th>Kode Stasiun</th>
+                <th>Kota</th>
                 <th>Alamat Stasiun</th>
                 <th>No Telp Stasiun</th>
-                <th>Keterangan</th>
                 <th></th>
               </tr>
             </thead>
@@ -33,19 +34,20 @@
               <tr>
                 <th>{{ $n }}</th>
                 <td>{{ $a->nama_st }}</td>
+                <td>{{ $a->kode_st}}</td>
+                <td>{{ $a->kota}}</td>
                 <td>{{ $a->alamat_st }}</td>
                 <td>{{ $a->tlp_st }}</td>
-                <td>{{ $a->keterangan }}</td>
                 <td>
                   <div class="columns">
                     <div class="column">
-                      <a href="station/{{$a->id}}/edit" class="button is-warning fa fa-edit"></a>
+                      <a href="station/{{$a->id}}/edit" class="button is-info">Edit</a>
                     </div>
                     <div class="column">
                       <form action="station/{{$a->id}}" method="post">
                         {{ csrf_field() }}
                         <input type="hidden" name="_method" value="delete">
-                        <button type="submit" name="button" class="button is-danger"><i class="fa fa-trash"></i></button>
+                        <button type="submit" name="button" class="button is-warning">Delete</button>
                       </form>
                     </div>
                   </div>

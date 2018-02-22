@@ -38,9 +38,10 @@ class StasionController extends Controller
     {
         $station = new Station;
         $station->nama_st = $request->input('nama_st');
+        $station->kode_st = $request->input('kode_st');
+        $station->kota = $request->input('kota');
         $station->alamat_st = $request->input('alamat_st');
         $station->tlp_st= $request->input('tlp_st');
-        $station->keterangan = $request->input('keterangan');
         $station->save();
 
         return redirect(route('station.index'));
@@ -80,9 +81,10 @@ class StasionController extends Controller
     {
         $station = Station::find($id);
         $station->nama_st = $request->input('nama_st');
+        $station->kode_st = $request->input('kode_st');
         $station->alamat_st = $request->input('alamat_st');
+        $station->kota = $request->input('kota');
         $station->tlp_st = $request->input('tlp_st');
-        $station->keterangan = $request->input('keterangan');
         $station->save();
 
         return redirect('/station')->with('success', 'Station Updated');

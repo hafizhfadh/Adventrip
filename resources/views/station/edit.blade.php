@@ -25,6 +25,26 @@
           <div class="columns">
             <div class="column">
               <div class="field">
+                <label class="label">Kode Stasiun</label>
+                <div class="control">
+                  <input class="input" type="text" value="{{ $data->kode_st }}" name="kode_st">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <div class="field">
+                <label class="label">Kota</label>
+                <div class="control">
+                  <input class="input" type="text" value="{{ $data->kota }}" name="kota">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <div class="field">
                 <label class="label">Alamat Stasiun</label>
                 <div class="control">
                   <input class="input" type="text" value="{{ $data->alamat_st }}" name="alamat_st">
@@ -42,22 +62,12 @@
               </div>
             </div>
           </div>
-          <div class="columns">
-            <div class="column">
-              <div class="field">
-                <label class="label">Keterangan</label>
-                <div class="control">
-                  <textarea class="textarea" name="keterangan">{{ $data->keterangan }}</textarea>
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="columns m-t-30 is-gapless">
             <div class="column">
-              <a href="{{ route('station.index') }}"class="button is-link fa fa-home"></a>
+              <a href="{{ route('station.index') }}"class="button is-danger">Cancel</a>
             </div>
             <div class="column">
-              <button class="button is-success fa fa-check" type="submit"></button>
+              <button class="button is-success" type="submit">Save</button>
             </div>
           </div>
         </form>
