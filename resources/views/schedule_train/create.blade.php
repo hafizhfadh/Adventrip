@@ -39,7 +39,7 @@
                 <div class="field">
                   <label class="label">Waktu Keberangkatan</label>
                   <div class="control">
-                    <input class="input" type="date" name="waktu_keberangkatan">
+                    <input class="input" type="time" name="waktu_keberangkatan">
                   </div>
                 </div>
               </div>
@@ -57,7 +57,7 @@
                 <div class="field">
                   <label class="label">Waktu Kedatangan</label>
                   <div class="control">
-                    <input class="input" type="date" name="waktu_kedatangan">
+                    <input class="input" type="time" name="waktu_kedatangan">
                   </div>
                 </div>
               </div>
@@ -67,7 +67,7 @@
                 <div class="field">
                   <label class="label">Waktu Perjalanan</label>
                   <div class="control">
-                    <input class="input" type="date" name="waktu_yang_ditempuh">
+                    <input class="input" type="time" name="waktu_yang_ditempuh">
                   </div>
                 </div>
               </div>

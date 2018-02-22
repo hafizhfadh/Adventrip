@@ -17,10 +17,10 @@ class CreateScheduleTrain extends Migration
             $table->increments('id');
             $table->string('nama_kereta');
             $table->string('stasiun_keberangkatan');
-            $table->datetime('waktu_keberangkatan');
+            $table->time('waktu_keberangkatan');
             $table->string('stasiun_kedatangan');
-            $table->datetime('waktu_kedatangan');
-            $table->datetime('waktu_yang_ditempuh');
+            $table->time('waktu_kedatangan');
+            $table->time('waktu_yang_ditempuh');
             $table->timestamps();
         });
     }
