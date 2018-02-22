@@ -1,79 +1,27 @@
 @extends('layouts.app')
 @section('content')
-  <div class="column">
-    <div class="card">
-      <div class="card-header">
-        <div class="columns">
-          <div class="column">
-            <p class="card-header-title">
-              Edit Data
-            </p>
-          </div>
+    {!! Form::model($crud,['route'=>['crud.update', $crud->id],'method'=>'PATCH','class'=>'form-horizontal']) !!}
+        <div class="form-group">
+        {!! Form::label('title','Title',['class'=>'control-label col-md-2']) !!}
+            <div class="col-md-10">
+            {!! Form::text('title',null,['class'=>'form-control']) !!}
+            {!! $errors->has('title')?$errors->first('title'):'' !!}
+            </div>
         </div>
-      </div>
-
-      <div class="card-content">
-        <form class="form-vertical" action="{{ route('station.store') }}">
-          <div class="field">
-            <label class="label">Nama Kereta</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Nama Kereta">
-              </div>
+        <div class="form-group">
+            {!! Form::label('description','Description',['class'=>'control-label col-md-2']) !!}
+            <div class="col-md-10">
+            {!! Form::textarea('description',null,['class'=>'form-control']) !!}
+            {!! $errors->has('description')?$errors->first('description'):'' !!}
             </div>
-            <div class="columns">
-              <div class="column">
-                <div class="field">
-                  <label class="label">Stasiun Keberangkatan</label>
-                  <div class="control">
-                    <input class="input" type="email" placeholder="Stasiun Keberangkatan">
-                  </div>
-                </div>
-              </div>
-              <div class="column">
-                <div class="field">
-                  <label class="label">Waktu Keberangkatan</label>
-                  <div class="control">
-                    <input class="input" type="email" placeholder="Waktu Keberangkatan">
-                  </div>
-                </div>
-              </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                {!! Form::submit('Save',['class'=>'btn btn-outline-primary']) !!}
             </div>
-            <div class="columns">
-              <div class="column">
-                <div class="field">
-                  <label class="label">Stasiun Kedatangan</label>
-                  <div class="control">
-                    <input class="input" type="email" placeholder="Stasiun Kedatangan">
-                  </div>
-                </div>
-              </div>
-              <div class="column">
-                <div class="field">
-                  <label class="label">Waktu Kedatangan</label>
-                  <div class="control">
-                    <input class="input" type="email" placeholder="Waktu Kedatangan">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="columns">
-              <div class="column">
-                <div class="field">
-                  <label class="label">Waktu Perjalanan</label>
-                  <div class="control">
-                    <input class="input" type="email" placeholder="Waktu Perjalanan">
-                  </div>
-                </div>
-              </div>
-              <div class="column m-t-30">
-                <button class="button is-success fa fa-check"></button>
-              </div>
-            </div>
-        </form>
-      </div>
-    </div>
-  </div>
-@endsection
+        </div>
+    {!! Form::close() !!}
+@stop
 
 @push('script')
   <script type="text/javascript">

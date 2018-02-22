@@ -23,4 +23,6 @@ Route::resource('/train', 'TrainController');
 
 Route::resource('/station', 'StasionController');
 
+Route::resource('/customer_ticket', 'CustomerTicket');
+
 Route::resource('/train_schedule', 'TrainScheduleController');

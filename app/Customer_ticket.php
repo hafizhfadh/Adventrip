@@ -11,5 +11,5 @@ class Customer_ticket extends Model
    *
    * @var string
    */
-  protected $table = 'customer_tickets';
+  protected $fillable = ['id','id_booking'];
 }

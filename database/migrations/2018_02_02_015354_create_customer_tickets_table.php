@@ -15,6 +15,8 @@ class CreateCustomerTicketsTable extends Migration
     {
         Schema::create('customer_tickets', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_booking');
+            $table->string('token');
             $table->timestamps();
         });
     }
