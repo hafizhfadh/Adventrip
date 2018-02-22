@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TrainScheduleController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class TrainScheduleController extends Controller
      */
     public function index()
     {
-        //
+        return view('customer.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class TrainScheduleController extends Controller
      */
     public function create()
     {
-        //
+        return view('customer.create');
     }
 
     /**
@@ -56,7 +56,7 @@ class TrainScheduleController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('customer.edit');
     }
 
     /**

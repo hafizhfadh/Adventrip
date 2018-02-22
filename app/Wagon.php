@@ -13,4 +13,9 @@ class Wagon extends Model
    */
   protected $table = 'wagons';
 
+  public function train()
+  {
+    return $this->belongsTo('App\Train');
+  }
+
 }

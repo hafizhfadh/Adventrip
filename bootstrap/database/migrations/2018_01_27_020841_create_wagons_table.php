@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTrainsTable extends Migration
+class CreateWagonsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateTrainsTable extends Migration
      */
     public function up()
     {
-        Schema::create('trains', function (Blueprint $table) {
+        Schema::create('wagons', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('train_id');
-            $table->string('train_name');
+            $table->enum('wagon_type', ['Executive', 'Bisnis', 'Economy']);
+            $table->string('price');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateTrainsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trains');
+        Schema::dropIfExists('wagons');
     }
 }

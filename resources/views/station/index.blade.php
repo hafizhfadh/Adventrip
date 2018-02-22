@@ -1,33 +1,68 @@
 @extends('layouts.app')
 @section('content')
-    <a href="crud/create" class="btn btn-outline-secondary">Add New</a>
-    <table class="table table-bordered table-responsive" style="margin-top: 10px">
-        <thead>
-            <th>NO</th>
-            <th>TITLE</th>
-            <th>DESCRIPTION</th>
-            <th>CREATED AT</th>
-            <th colspan="2">ACTION</th>
-        </thead>
-        <tbody>
-            @foreach($cruds as $crud)
-            <tr>
-                <td>{{ $crud->id }}</td>
-                <td>{{ $crud->title }}</td>
-                <td>{{ $crud->description }}</td>
-                <td>{{ $crud->created_at }}</td>
+  <div class="column is-10">
+    <div class="card">
+      <div class="card-header">
+        <div class="columns">
+          <div class="column">
+            <p class="card-header-title">
+              Stations
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="columns">
+          <a href="{{ route('station.create') }}"class="button is-danger">Create</a>
+        </div>
+        <div class="table__wrapper">
+          <table class="table is-bordered pricing__table is-fullwidth">
+            <thead>
+              <tr>
+                <th><abbr title="Position">No</abbr></th>
+                <th>Nama Stasiun</th>
+                <th>Kode Stasiun</th>
+                <th>Kota</th>
+                <th>Alamat Stasiun</th>
+                <th>No Telp Stasiun</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php $n=1 ?>
+              @foreach($data as $a)
+              <tr>
+                <th>{{ $n }}</th>
+                <td>{{ $a->nama_st }}</td>
+                <td>{{ $a->kode_st}}</td>
+                <td>{{ $a->kota}}</td>
+                <td>{{ $a->alamat_st }}</td>
+                <td>{{ $a->tlp_st }}</td>
                 <td>
-                    <a href="{{ route('crud.edit', $crud->id) }}" class="btn btn-outline-success">Edit</a>
-                    {!! Form::open(['method'=>'delete','route'=>['crud.destroy',$crud->id]]) !!}
-                    &nbsp;
-                    {!! Form::submit('Delete',['class'=>'btn btn-outline-danger']) !!}
-                    {!! Form::close() !!}
+                  <div class="columns">
+                    <div class="column">
+                      <a href="station/{{$a->id}}/edit" class="button is-info">Edit</a>
+                    </div>
+                    <div class="column">
+                      <form action="station/{{$a->id}}" method="post">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="_method" value="delete">
+                        <button type="submit" name="button" class="button is-warning">Delete</button>
+                      </form>
+                    </div>
+                  </div>
                 </td>
-            </tr>
-            @endforeach
-        </tbody>
+              </tr>
+              <?php $n++ ?>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+@endsection
 
-@stop
 @push('script')
   <script type="text/javascript">
 

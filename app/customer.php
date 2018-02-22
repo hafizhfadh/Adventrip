@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Schedule_train extends Model
+class customer extends Model
 {
-    //
+    protected $table = 'customer';
 }
